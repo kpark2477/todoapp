@@ -66,7 +66,7 @@ def set_completed_todo(todo_id):
         db.session.rollback()
     finally:
         db.session.close()
-    return redirect(url_for('index'))
+    return jsonify({'success': True})
 
 @app.route('/todos/<todo_id>/delete', methods=['DELETE'])
 def delete_todo(todo_id):
@@ -81,16 +81,22 @@ def delete_todo(todo_id):
 
 @app.route('/lists/<list_id>')
 def get_list_todos(list_id):
-    return render_template(
-        'main.html',
-        lists = TodoList.query.all(), 
-        active_list = TodoList.query.get(list_id),
-        todos=Todo.query.filter_by(list_id=list_id).order_by('id').all()
-        )
+    active_list = TodoList.query.get(list_id)
+
+    if active_list == None:
+        return redirect(url_for('get_main_page'))
+
+    else:
+        return render_template(
+            'active_list.html',
+            lists = TodoList.query.all(), 
+            active_list = active_list,
+            todos=Todo.query.filter_by(list_id=list_id).order_by('id').all()
+            )
 
 @app.route('/')
-def index():
-    return redirect(url_for('get_list_todos', list_id=1))
+def get_main_page():
+    return render_template('main.html', lists = TodoList.query.all())
 
 @app.route('/lists/create', methods=['POST'])
 def create_list():
