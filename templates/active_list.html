@@ -147,7 +147,7 @@
             const checkboxes = document.querySelectorAll('.todo-check-completed');
             for (let i = 0; i < checkboxes.length; i++) {
                 const checkbox = checkboxes[i];
-                checkbox.onchange = function(e) {
+                checkbox.onchange = function (e) {
                     console.log('event', e);
                     const newCompleted = e.target.checked;
                     const todoID = e.target.dataset['id'];
@@ -167,8 +167,9 @@
                     console.log('error', err)
                     document.getElementById('error').className = '';
                     })
+                }          
                 }
-            }
+            
 
 
             const descInput = document.getElementById('description');
@@ -201,6 +202,7 @@
                     checkbox.setAttribute('data-id', JsonResponse.id);
                     li.appendChild(checkbox);
 
+
                     const text = document.createTextNode(' ' + JsonResponse.description);
                     li.appendChild(text);
 
@@ -212,6 +214,7 @@
 
                     document.getElementById('todos').appendChild(li);
                     document.getElementById('error').className = 'hidden';
+                    
                 })
                 .catch(function(err) {
                     console.log('error', err)
