@@ -47,6 +47,7 @@ document.getElementById('list-form').onsubmit = function (e) {
         }
 
         document.getElementById('lists').appendChild(li);
+        
         document.getElementById('error').className = 'hidden';
     })
     .catch(function (err) {

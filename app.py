@@ -89,14 +89,14 @@ def get_list_todos(list_id):
     else:
         return render_template(
             'active_list.html',
-            lists = TodoList.query.all(), 
+            lists = TodoList.query.order_by('id').all(), 
             active_list = active_list,
             todos=Todo.query.filter_by(list_id=list_id).order_by('id').all()
             )
 
 @app.route('/')
 def get_main_page():
-    return render_template('main.html', lists = TodoList.query.all())
+    return render_template('main.html', lists = TodoList.query.order_by('id').all())
 
 @app.route('/lists/create', methods=['POST'])
 def create_list():

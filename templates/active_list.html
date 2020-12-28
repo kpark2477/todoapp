@@ -9,7 +9,7 @@
             <h4>TODO LISTS</h4>
             <form action="/lists/create" method="POST" id="list-form">
                 <label for="todolist">Create List:</label>
-                <input type="text" name="todolist" id="todolist-input" placeholder="A new List" data-id="{{ active_list.id }}" />
+                <input type="text" name="todolist" id="todolist-input" placeholder="A new List"/>
                 <button type="submit">Create List</button>
             </form>
             <ul id='lists'>
@@ -25,7 +25,7 @@
         <div class="todos-wrapper">
             <h4>TODO ITEMS</h4>
             <form id="todo-form">
-                <input id="list_id" type="hidden" value="{{ active_list.id }}">
+                <input id="list_id" type="hidden">
                 <label for="description">Create Task:</label>
                 <input type="text" id="description" name="description" placeholder="Task description" />
                 <input type="submit" value="Create"/>
