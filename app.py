@@ -4,10 +4,16 @@ from flask_migrate import Migrate
 import sys
 
 app = Flask(__name__)
+# postgres를 설치하고 로컬서버에 todoapp이라는 db를 만드셔야 합니다.
+# 그 후에 아래 data base uri configuration을 바꿔주세요.
+# 'postgres://YourUsername:Password@localhost:5432/todoapp' 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:1111@localhost:5432/todoapp'
 db = SQLAlchemy(app)
 
-migrate = Migrate(app, db)
+# migrate = Migrate(app, db)
+
+# migration을 활용하는게 좋으나, 다운받아서 테스트 해보시는 분들의 편의를 위해 31, 32번
+# 라인에서 db를 초기화 시키도록 코드해두었습니다.
 
 
 class Todo(db.Model):
@@ -25,6 +31,10 @@ class TodoList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(), nullable=False)
     todos = db.relationship('Todo', backref='list', lazy=True)
+
+# This will reset the db
+db.drop_all()
+db.create_all()
 
 
 @app.route('/todos/create', methods=['POST'])

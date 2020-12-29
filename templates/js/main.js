@@ -114,6 +114,8 @@ for (let i = 0; i < listCheckboxes.length; i++) {
 document.getElementById('todo-form').onsubmit = function(e) {
     e.preventDefault();
     document.getElementById('error').innerText = 'You should select a List first!'
+    const descInput = document.getElementById('description');
+    descInput.value = '';
     document.getElementById('error').className = '';
     }
     
