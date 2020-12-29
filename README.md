@@ -1,4 +1,5 @@
-#### todoapp
+
+### todoapp
 Python flask와 postgres, SQLAlchemy를 활용한 기본적인 CRUD app입니다.
 Javascript fetch call을 활용하여 refresh를 최소화하여 이용할수 있게 구현되어 있습니다.
 
