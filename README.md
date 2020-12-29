@@ -1,12 +1,13 @@
-# todoapp
+#### todoapp
 Python flask와 postgres, SQLAlchemy를 활용한 기본적인 CRUD app입니다.
 Javascript fetch call을 활용하여 refresh를 최소화하여 이용할수 있게 구현되어 있습니다.
 
-# Full Stack Trivia API Backend
-
-## Getting Started
+먼저 해야할 일 List를 만들고, 그 list안에 구체적인 task 항목들을 만들 수 있습니다.
+list와 task 항목 왼편에 있는 checkbox와 우측에 있는 X버튼을 이용하여, 완료표시와 항목 지우기를 할 수 있습니다.
 
 ### Installing Dependencies
+
+
 
 #### Python 3.7
 
