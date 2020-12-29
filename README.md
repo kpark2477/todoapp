@@ -1,5 +1,5 @@
 
-### todoapp
+### Todoapp
 Python flask와 postgres, SQLAlchemy를 활용한 기본적인 CRUD app입니다.
 Javascript fetch call을 활용하여 refresh를 최소화하여 이용할수 있게 구현되어 있습니다.
 
@@ -8,25 +8,16 @@ list와 task 항목 왼편에 있는 checkbox와 우측에 있는 X버튼을 이
 
 ### Installing Dependencies
 
-
-
 #### Python 3.7
 
-Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+Python 3.7 이상의 버전이 필요합니다.
+[python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
 
 #### Virtual Enviornment
 
-We recommend working within a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organaized. Instructions for setting up a virual enviornment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+아래의 추가적인 python dependencies를 install할 때 virtual environment를 이용하실 것을 추천합니다.
+[python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
-#### PIP Dependencies
-
-Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
-
-```bash
-pip install -r requirements.txt
-```
-
-This will install all of the required packages we selected within the `requirements.txt` file.
 
 ##### Key Dependencies
 
@@ -34,7 +25,7 @@ This will install all of the required packages we selected within the `requireme
 
 - [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use handle the lightweight sqlite database. You'll primarily work in app.py and can reference models.py. 
 
-- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross origin requests from our frontend server. 
+- [Flask-migrate](https://flask-migrate.readthedocs.io/en/latest/) is the extension we'll use to handle cross origin requests from our frontend server. 
 
 ## Database Setup
 With Postgres running, restore a database using the trivia.psql file provided. From the backend folder in terminal run:
